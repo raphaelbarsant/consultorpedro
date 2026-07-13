@@ -5,64 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Consultoria estratégica para empresas que buscam crescimento sustentável. Diagnóstico, planejamento e execução para aumentar resultados.">
   <meta name="keywords" content="consultoria empresarial, estratégia de negócios, gestão empresarial, crescimento empresarial">
-  <meta property="og:title" content="Consultoria Estratégica de Negócios">
+  <meta property="og:title" content="Pedro Pinheiro | Consultoria Estratégica">
   <meta property="og:description" content="Ajudo empresários a identificar gargalos, organizar processos e aumentar resultados.">
   <meta property="og:type" content="website">
-  <title>Pedro Pinheiro | Consultoria Estratégica de Negócios</title>
+  <title>Pedro Pinheiro | Consultoria Estratégica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --ink: #0a1628;
-      --ink-rgb: 10, 22, 40;
-      --surface: #fafbfc;
-      --surface-alt: #f3f5f7;
+      --bg: #080b14;
+      --bg-rgb: 8, 11, 20;
+      --surface: #0e1322;
+      --surface-rgb: 14, 19, 34;
+      --surface-hover: #141b2e;
       --accent: #c9a84c;
       --accent-rgb: 201, 168, 76;
-      --accent-hover: #b8963a;
-      --muted: #5a6a7e;
-      --deep: #0d1f3c;
-      --deep-rgb: 13, 31, 60;
-      --deep-surface: #132a4a;
-      --border: #e2e6eb;
-      --success: #2d8a5e;
-      --error: #c0392b;
+      --accent-hover: #d4b85e;
+      --text: #f0f2f5;
+      --text-rgb: 240, 242, 245;
+      --muted: #6b7a94;
+      --border: rgba(255,255,255,0.06);
+      --border-accent: rgba(201,168,76,0.2);
       --font-body: 'Manrope', system-ui, sans-serif;
       --font-display: 'Instrument Serif', Georgia, serif;
-      --text-hero: clamp(2.5rem, 5vw, 4.5rem);
-      --text-display: clamp(2rem, 4vw, 3.25rem);
-      --text-heading: clamp(1.35rem, 2.5vw, 1.75rem);
-      --text-body: clamp(1rem, 1.1vw, 1.125rem);
-      --text-small: 0.875rem;
-      --text-micro: 0.75rem;
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2.5rem;
-      --space-xl: 4rem;
-      --space-2xl: 6rem;
       --max-width: 1200px;
       --nav-height: 72px;
     }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
-      color: var(--ink);
-      background: var(--surface);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; border: none; background: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
     ul { list-style: none; }
 
     .container {
@@ -84,13 +70,12 @@
       top: 0; left: 0; right: 0;
       height: var(--nav-height);
       z-index: 200;
-      transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+      transition: background 0.4s, backdrop-filter 0.4s;
     }
     .nav.scrolled {
-      background: rgba(250,251,252,0.92);
+      background: rgba(8,11,20,0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 1px 0 var(--border);
     }
     .nav-inner {
       display: flex;
@@ -104,47 +89,39 @@
     .nav-logo {
       font-family: var(--font-body);
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       letter-spacing: -0.03em;
-      color: var(--ink);
-      transition: color 0.3s;
+      color: var(--text);
     }
     .nav-logo span { color: var(--accent); }
-    .nav:not(.scrolled) .nav-logo { color: #fff; }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.25rem;
     }
     .nav-links a {
-      font-size: var(--text-small);
+      font-size: 0.8rem;
       font-weight: 500;
       color: var(--muted);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
       transition: color 0.3s;
-      position: relative;
     }
-    .nav:not(.scrolled) .nav-links a { color: rgba(255,255,255,0.7); }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 2px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--text); }
     .nav-cta {
-      font-size: var(--text-small) !important;
-      font-weight: 600 !important;
-      padding: 0.6rem 1.5rem;
-      background: var(--accent);
-      color: var(--ink) !important;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background: var(--accent) !important;
+      color: var(--bg) !important;
+      font-weight: 700 !important;
       border-radius: 6px;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
       transition: background 0.3s, transform 0.3s;
     }
     .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
-    .nav-cta::after { display: none !important; }
     .nav-mobile-toggle {
       display: none;
       flex-direction: column;
@@ -153,12 +130,10 @@
     }
     .nav-mobile-toggle span {
       display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--ink);
-      transition: background 0.3s;
+      width: 24px; height: 2px;
+      background: var(--text);
+      transition: transform 0.3s;
     }
-    .nav:not(.scrolled) .nav-mobile-toggle span { background: #fff; }
 
     /* ── Hero ── */
     .hero {
@@ -166,68 +141,50 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: var(--deep);
       overflow: hidden;
     }
     .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(var(--deep-rgb), 0.5) 0%, transparent 70%),
-        linear-gradient(135deg, #080f1e 0%, #0d1f3c 50%, #0a1628 100%);
-    }
-    .hero-grid-pattern {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.5;
-    }
-    .hero-glow {
-      position: absolute;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(var(--accent-rgb), 0.12) 0%, transparent 70%);
-      top: 10%; right: 15%;
-      filter: blur(60px);
-      pointer-events: none;
+        radial-gradient(ellipse 50% 60% at 75% 50%, rgba(var(--accent-rgb), 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(20,40,80,0.3) 0%, transparent 70%),
+        var(--bg);
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
       align-items: center;
-      justify-content: flex-end;
       min-height: 100vh;
-      padding: calc(var(--nav-height) + 3rem) 0 var(--space-2xl);
+      padding: calc(var(--nav-height) + 2rem) 0 4rem;
     }
-    .hero-text { max-width: 600px; }
+    .hero-text { max-width: 640px; }
     .hero-tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: var(--text-micro);
-      font-weight: 600;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       color: var(--accent);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .hero-tag::before {
       content: '';
-      width: 32px; height: 1px;
+      width: 40px; height: 1px;
       background: var(--accent);
     }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: var(--text-hero);
+      font-size: clamp(3rem, 7vw, 6rem);
       font-weight: 400;
-      line-height: 1.1;
-      color: #fff;
-      letter-spacing: -0.02em;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--text);
       margin-bottom: 1.5rem;
       text-wrap: balance;
     }
@@ -235,12 +192,12 @@
       font-style: italic;
       color: var(--accent);
     }
-    .hero p {
-      font-size: var(--text-body);
-      color: rgba(255,255,255,0.65);
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+      color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 520px;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
     }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
@@ -249,9 +206,9 @@
       gap: 0.5rem;
       padding: 1rem 2rem;
       background: var(--accent);
-      color: var(--ink);
+      color: var(--bg);
       font-weight: 700;
-      font-size: var(--text-small);
+      font-size: 0.875rem;
       border-radius: 8px;
       transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     }
@@ -260,316 +217,159 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(var(--accent-rgb), 0.3);
     }
-    .btn-secondary {
+    .btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding: 1rem 2rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text);
       font-weight: 600;
-      font-size: var(--text-small);
+      font-size: 0.875rem;
       border-radius: 8px;
       transition: border-color 0.3s, background 0.3s;
     }
-    .btn-secondary:hover {
+    .btn-outline:hover {
       border-color: var(--accent);
-      background: rgba(var(--accent-rgb), 0.1);
+      background: rgba(var(--accent-rgb), 0.08);
     }
-    .hero-banner {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
+    .hero-photo {
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
-    .hero-banner img {
+    .hero-photo-frame {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-accent);
+    }
+    .hero-photo-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
     }
-    .hero-banner::after {
+    .hero-photo-frame::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to left, rgba(8,15,30,0.92) 0%, rgba(8,15,30,0.7) 50%, rgba(8,15,30,0.3) 100%);
+      background: linear-gradient(to top, rgba(var(--bg-rgb), 0.6) 0%, transparent 40%);
     }
-    .hero-floating-card {
+    .hero-photo-label {
       position: absolute;
-      bottom: 3rem;
-      left: 3rem;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 1rem 1.25rem;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      z-index: 3;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 2;
     }
-    .hero-floating-card .icon-circle {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: rgba(var(--accent-rgb), 0.15);
+    .hero-photo-label strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero-photo-label span {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .hero-stat-num span { color: var(--accent); }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Section Shared ── */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      position: relative;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto clamp(3rem, 5vw, 4rem);
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
+      gap: 0.75rem;
     }
-    .hero-floating-card .card-text {
-      font-size: var(--text-small);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.3;
-    }
-    .hero-floating-card .card-sub {
-      font-size: var(--text-micro);
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    /* ── Sections Shared ── */
-    .section { padding: var(--space-2xl) 0; }
-    .section-dark { background: var(--deep); color: #fff; }
-    .section-alt { background: var(--surface-alt); }
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto var(--space-xl);
-    }
-    .section-label {
-      font-size: var(--text-micro);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
     }
     .section-title {
       font-family: var(--font-display);
-      font-size: var(--text-display);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400;
-      line-height: 1.15;
+      line-height: 1.1;
       letter-spacing: -0.02em;
+      color: var(--text);
       text-wrap: balance;
     }
-    .section-subtitle {
-      font-size: var(--text-body);
+    .section-sub {
+      font-size: 0.95rem;
       color: var(--muted);
       margin-top: 1rem;
       line-height: 1.7;
     }
-    .section-dark .section-subtitle { color: rgba(255,255,255,0.6); }
 
-    /* ── Authority ── */
-    .authority-grid {
+    /* ── Services ── */
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-    .authority-card {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-radius: 12px;
-      background: var(--surface);
+      gap: 1px;
+      background: var(--border);
       border: 1px solid var(--border);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .authority-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(var(--ink-rgb), 0.08);
-    }
-    .authority-number {
-      font-family: var(--font-body);
-      font-size: clamp(2.25rem, 4vw, 3rem);
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    .authority-number span { color: var(--accent); }
-    .authority-label {
-      font-size: var(--text-small);
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* ── Problems ── */
-    .problems-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
-    .problem-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .problem-card:hover {
-      border-color: rgba(var(--accent-rgb), 0.3);
-      background: rgba(var(--accent-rgb), 0.04);
-    }
-    .problem-icon {
-      flex-shrink: 0;
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: rgba(var(--accent-rgb), 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-    }
-    .problem-text {
-      font-size: var(--text-small);
-      font-weight: 500;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .problems-cta {
-      text-align: center;
-      margin-top: var(--space-lg);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: var(--text-heading);
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* ── Solutions ── */
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .solution-card {
-      padding: 2rem;
-      border-radius: 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s;
-      position: relative;
+      border-radius: 16px;
       overflow: hidden;
     }
-    .solution-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .solution-card:hover::before { transform: scaleX(1); }
-    .solution-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(var(--ink-rgb), 0.08);
-      border-color: transparent;
-    }
-    .solution-icon {
-      width: 48px; height: 48px;
-      border-radius: 10px;
-      background: rgba(var(--accent-rgb), 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-    .solution-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-    .solution-card p {
-      font-size: var(--text-small);
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── Method ── */
-    .method-timeline {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-    .method-timeline::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: 12.5%;
-      right: 12.5%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.3));
-    }
-    .method-step {
-      text-align: center;
-      position: relative;
-      padding: 0 1rem;
-    }
-    .method-number {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: var(--deep);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
-    .method-number span {
-      font-family: var(--font-body);
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--accent);
-    }
-    .method-step h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .method-step p {
-      font-size: var(--text-small);
-      color: rgba(255,255,255,0.55);
-      line-height: 1.6;
-    }
-    .method-arrow {
-      display: none;
-    }
-
-    /* ── Differentials ── */
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .diff-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
+    .service-card {
+      padding: 2rem 1.5rem;
       background: var(--surface);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: background 0.3s;
+      position: relative;
     }
-    .diff-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(var(--ink-rgb), 0.06);
+    .service-card::before {
+      content: attr(data-num);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.5;
+      letter-spacing: 0.05em;
     }
-    .diff-icon {
-      flex-shrink: 0;
+    .service-card:hover { background: var(--surface-hover); }
+    .service-icon {
       width: 44px; height: 44px;
       border-radius: 10px;
       background: rgba(var(--accent-rgb), 0.1);
@@ -577,31 +377,73 @@
       align-items: center;
       justify-content: center;
       color: var(--accent);
+      margin: 1rem 0;
     }
-    .diff-card h3 {
+    .service-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .service-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Method ── */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .method-step {
+      padding: 2.5rem 2rem;
+      background: var(--surface);
+      text-align: center;
+      position: relative;
+    }
+    .method-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .method-step h3 {
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
     }
-    .diff-card p {
-      font-size: var(--text-small);
+    .method-step p {
+      font-size: 0.8rem;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* ── Testimonials ── */
     .testimonials-track {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding: 1rem 0 2rem;
+      padding: 0.5rem 0 1.5rem;
       scrollbar-width: none;
     }
     .testimonials-track::-webkit-scrollbar { display: none; }
     .testimonial-card {
-      flex: 0 0 min(400px, 85vw);
+      flex: 0 0 min(380px, 85vw);
       scroll-snap-align: start;
       padding: 2rem;
       border-radius: 14px;
@@ -610,35 +452,32 @@
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+      transition: border-color 0.3s;
     }
+    .testimonial-card:hover { border-color: var(--border-accent); }
     .testimonial-header {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
     .testimonial-avatar {
-      width: 52px; height: 52px;
+      width: 48px; height: 48px;
       border-radius: 50%;
-      background: var(--deep-surface);
+      background: rgba(var(--accent-rgb), 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       color: var(--accent);
       flex-shrink: 0;
-      overflow: hidden;
-    }
-    .testimonial-avatar img {
-      width: 100%; height: 100%;
-      object-fit: cover;
     }
     .testimonial-name {
       font-weight: 700;
-      font-size: var(--text-small);
+      font-size: 0.9rem;
     }
     .testimonial-role {
-      font-size: var(--text-micro);
+      font-size: 0.75rem;
       color: var(--muted);
     }
     .testimonial-stars {
@@ -647,7 +486,7 @@
       color: var(--accent);
     }
     .testimonial-text {
-      font-size: var(--text-small);
+      font-size: 0.85rem;
       color: var(--muted);
       line-height: 1.7;
       font-style: italic;
@@ -662,7 +501,7 @@
     .testimonials-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--border);
+      background: rgba(255,255,255,0.1);
       transition: background 0.3s, width 0.3s;
     }
     .testimonials-dot.active {
@@ -674,56 +513,54 @@
     /* ── Cases ── */
     .cases-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
     .case-card {
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--surface);
-      transition: transform 0.4s, box-shadow 0.4s;
+      transition: transform 0.4s, border-color 0.3s;
     }
     .case-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(var(--ink-rgb), 0.1);
+      border-color: var(--border-accent);
     }
     .case-header {
-      padding: 2rem 2rem 1.25rem;
+      padding: 1.75rem 1.75rem 1rem;
     }
     .case-tag {
       display: inline-block;
-      font-size: var(--text-micro);
-      font-weight: 600;
+      font-size: 0.65rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--accent);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .case-header h3 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 700;
       line-height: 1.3;
     }
-    .case-body {
-      padding: 0 2rem 2rem;
-    }
+    .case-body { padding: 0 1.75rem 1.75rem; }
     .case-row {
       display: flex;
       gap: 0.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
     .case-row-label {
-      font-size: var(--text-micro);
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--muted);
-      min-width: 80px;
+      min-width: 70px;
     }
     .case-row-value {
-      font-size: var(--text-small);
-      color: var(--ink);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
       line-height: 1.5;
     }
     .case-result {
@@ -735,67 +572,20 @@
       gap: 0.75rem;
     }
     .case-result-number {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: var(--success);
+      color: var(--accent);
       letter-spacing: -0.03em;
     }
     .case-result-label {
-      font-size: var(--text-small);
+      font-size: 0.8rem;
       color: var(--muted);
-    }
-
-    /* ── FAQ ── */
-    .faq-list {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .faq-question {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 0;
-      font-size: var(--text-body);
-      font-weight: 600;
-      text-align: left;
-      color: var(--ink);
-      transition: color 0.3s;
-    }
-    .faq-question:hover { color: var(--accent); }
-    .faq-icon {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-      color: var(--muted);
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-      padding-bottom: 1.5rem;
-    }
-    .faq-answer p {
-      font-size: var(--text-small);
-      color: var(--muted);
-      line-height: 1.7;
     }
 
     /* ── CTA Final ── */
     .cta-final {
       position: relative;
-      padding: var(--space-2xl) 0;
-      background: var(--deep);
+      padding: clamp(5rem, 10vw, 8rem) 0;
       text-align: center;
       overflow: hidden;
     }
@@ -803,8 +593,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(var(--accent-rgb), 0.1) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%);
     }
     .cta-final-content {
       position: relative;
@@ -812,57 +601,77 @@
     }
     .cta-final h2 {
       font-family: var(--font-display);
-      font-size: var(--text-display);
-      color: #fff;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      color: var(--text);
       margin-bottom: 1rem;
       text-wrap: balance;
+      line-height: 1.1;
     }
     .cta-final p {
-      font-size: var(--text-body);
-      color: rgba(255,255,255,0.6);
-      max-width: 560px;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
       margin: 0 auto 2rem;
       line-height: 1.7;
-    }
-    .cta-final .btn-primary {
-      font-size: 1rem;
-      padding: 1.15rem 2.5rem;
     }
 
     /* ── Footer ── */
     .footer {
-      background: #060d18;
-      color: rgba(255,255,255,0.5);
-      padding: var(--space-xl) 0 var(--space-lg);
+      background: #050810;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid var(--border);
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
-      margin-bottom: var(--space-xl);
+      margin-bottom: 3rem;
     }
     .footer-brand p {
-      font-size: var(--text-small);
+      font-size: 0.85rem;
+      color: var(--muted);
       line-height: 1.7;
       margin-top: 1rem;
       max-width: 300px;
     }
     .footer h4 {
-      font-size: var(--text-small);
+      font-size: 0.75rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       margin-bottom: 1rem;
     }
-    .footer-links li { margin-bottom: 0.5rem; }
-    .footer-links a {
-      font-size: var(--text-small);
-      color: rgba(255,255,255,0.5);
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-links span {
+      font-size: 0.85rem;
+      color: var(--muted);
       transition: color 0.3s;
     }
     .footer-links a:hover { color: var(--accent); }
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .footer-social a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(var(--accent-rgb), 0.08);
+    }
     .footer-bottom {
-      padding-top: var(--space-lg);
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -870,37 +679,19 @@
       gap: 1rem;
     }
     .footer-bottom p {
-      font-size: var(--text-micro);
+      font-size: 0.75rem;
+      color: var(--muted);
     }
     .footer-legal {
       display: flex;
       gap: 1.5rem;
     }
     .footer-legal a {
-      font-size: var(--text-micro);
-      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
       transition: color 0.3s;
     }
     .footer-legal a:hover { color: var(--accent); }
-    .footer-social {
-      display: flex;
-      gap: 0.75rem;
-    }
-    .footer-social a {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.5);
-      transition: border-color 0.3s, color 0.3s, background 0.3s;
-    }
-    .footer-social a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(var(--accent-rgb), 0.1);
-    }
 
     /* ── Floating ── */
     .whatsapp-btn {
@@ -916,12 +707,9 @@
       justify-content: center;
       box-shadow: 0 4px 24px rgba(37,211,102,0.4);
       z-index: 600;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
     }
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 32px rgba(37,211,102,0.5);
-    }
+    .whatsapp-btn:hover { transform: scale(1.1); }
     .back-to-top {
       position: fixed;
       bottom: 5.5rem;
@@ -930,7 +718,7 @@
       border-radius: 50%;
       background: var(--surface);
       border: 1px solid var(--border);
-      color: var(--ink);
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -947,7 +735,7 @@
     }
     .back-to-top:hover {
       background: var(--accent);
-      color: var(--ink);
+      color: var(--bg);
       border-color: var(--accent);
     }
 
@@ -969,15 +757,18 @@
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
-      .hero-content { justify-content: center; text-align: center; }
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
       .hero-text { max-width: 100%; }
-      .authority-grid { grid-template-columns: repeat(2, 1fr); }
-      .method-timeline { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-      .method-timeline::before { display: none; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-photo { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .method-grid { grid-template-columns: repeat(2, 1fr); }
+      .cases-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      :root { --space-2xl: 4rem; }
       .nav-links { display: none; }
       .nav-mobile-toggle { display: flex; }
       .nav-links.open {
@@ -986,27 +777,24 @@
         position: absolute;
         top: var(--nav-height);
         left: 0; right: 0;
-        background: var(--surface);
+        background: rgba(8,11,20,0.97);
+        backdrop-filter: blur(20px);
         padding: 1.5rem;
         gap: 1rem;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         border-bottom: 1px solid var(--border);
       }
-      .nav-links.open a { color: var(--ink) !important; }
-      .authority-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .problems-grid { grid-template-columns: 1fr; }
-      .solutions-grid { grid-template-columns: 1fr; }
-      .method-timeline { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .services-grid { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
     @media (max-width: 480px) {
-      .authority-grid { grid-template-columns: 1fr 1fr; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn-primary,
-      .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+      .hero-actions .btn-outline { width: 100%; justify-content: center; }
+      .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
     }
 
     /* ── Reduced Motion ── */
@@ -1026,14 +814,12 @@
   <!-- Navigation -->
   <nav class="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="Página inicial">Pedro Pinheiro<span>.</span></a>
+      <a href="#" class="nav-logo">Pedro Pinheiro<span>.</span></a>
       <div class="nav-links" id="navLinks" role="menubar">
-        <a href="#autoridade" role="menuitem">Sobre</a>
         <a href="#servicos" role="menuitem">Serviços</a>
         <a href="#metodo" role="menuitem">Método</a>
         <a href="#cases" role="menuitem">Cases</a>
         <a href="#depoimentos" role="menuitem">Depoimentos</a>
-        <a href="#faq" role="menuitem">FAQ</a>
         <a href="#contato" class="nav-cta" role="menuitem">Agendar Diagnóstico</a>
       </div>
       <button class="nav-mobile-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -1045,230 +831,147 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-banner" aria-hidden="true">
-      <img src="Captura de Tela 2026-07-11 à(s) 10.54.48.png" alt="" loading="eager">
-    </div>
-    <div class="hero-grid-pattern" aria-hidden="true"></div>
-    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-content">
       <div class="hero-text">
         <div class="hero-tag">Consultoria Estratégica</div>
         <h1>Toda empresa cresce até o limite da <em>estratégia</em> do seu líder.</h1>
-        <p>Ajudo empresários a identificar gargalos, organizar processos, aumentar resultados e construir empresas mais lucrativas através de estratégia, gestão e inteligência de negócios.</p>
+        <p class="hero-sub">Ajudo empresários a identificar gargalos, organizar processos, aumentar resultados e construir empresas mais lucrativas através de estratégia, gestão e inteligência de negócios.</p>
         <div class="hero-actions">
           <a href="#contato" class="btn-primary">
             Agendar Diagnóstico Estratégico
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="#autoridade" class="btn-secondary">
+          <a href="#servicos" class="btn-outline">
             Conheça meu trabalho
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
         </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num"><span data-target="80" class="counter">0</span>+</div>
+            <div class="hero-stat-label">Empresas atendidas</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span data-target="120" class="counter">0</span>+</div>
+            <div class="hero-stat-label">Projetos desenvolvidos</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span data-target="15" class="counter">0</span>+</div>
+            <div class="hero-stat-label">Anos de experiência</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span data-target="47" class="counter">0</span>%</div>
+            <div class="hero-stat-label">Crescimento médio</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-visual" style="display:none;"></div>
-      <div class="hero-floating-card">
-        <div class="icon-circle">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <div>
-          <div class="card-text">+47% crescimento médio</div>
-          <div class="card-sub">nos primeiros 12 meses</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Authority -->
-  <section class="section" id="autoridade">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">Autoridade</div>
-        <h2 class="section-title">Mais do que consultoria. Estratégia para transformar empresas.</h2>
-        <p class="section-subtitle">Não entrego apenas opiniões. Analiso profundamente a empresa, identifico oportunidades ocultas, crio planos estratégicos e acompanho a execução para gerar resultados consistentes.</p>
-      </div>
-      <div class="authority-grid">
-        <div class="authority-card reveal reveal-delay-1">
-          <div class="authority-number"><span data-target="80" class="counter">0</span>+</div>
-          <div class="authority-label">Empresas atendidas</div>
-        </div>
-        <div class="authority-card reveal reveal-delay-2">
-          <div class="authority-number"><span data-target="120" class="counter">0</span>+</div>
-          <div class="authority-label">Projetos desenvolvidos</div>
-        </div>
-        <div class="authority-card reveal reveal-delay-3">
-          <div class="authority-number"><span data-target="15" class="counter">0</span>+</div>
-          <div class="authority-label">Anos de experiência</div>
-        </div>
-        <div class="authority-card reveal reveal-delay-4">
-          <div class="authority-number"><span data-target="47" class="counter">0</span>%</div>
-          <div class="authority-label">Crescimento médio obtido</div>
+      <div class="hero-photo">
+        <div class="hero-photo-frame">
+          <img src="Captura de Tela 2026-07-11 à(s) 10.54.48.png" alt="Pedro Pinheiro — Consultor e Estrategista de Negócios" loading="eager">
+          <div class="hero-photo-label">
+            <strong>Pedro Pinheiro</strong>
+            <span>Consultor Estratégico</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Problems -->
-  <section class="section section-dark" id="problemas">
+  <!-- Services -->
+  <section class="section" id="servicos">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Diagnóstico</div>
-        <h2 class="section-title" style="color:#fff">Sua empresa apresenta algum destes sinais?</h2>
+        <div class="section-label">O que eu faço</div>
+        <h2 class="section-title">Soluções estratégicas para cada desafio</h2>
+        <p class="section-sub">Cada empresa é única. As soluções também.</p>
       </div>
-      <div class="problems-grid">
-        <div class="problem-card reveal reveal-delay-1">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="problem-text">Crescimento estagnado</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-1">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="problem-text">Equipe desorganizada</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-2">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div class="problem-text">Falta de processos</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-2">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div class="problem-text">Baixa lucratividade</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-3">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div class="problem-text">Problemas de gestão</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-3">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
-          </div>
-          <div class="problem-text">Falta de indicadores</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-4">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <div class="problem-text">Empresário sobrecarregado</div>
-        </div>
-        <div class="problem-card reveal reveal-delay-4">
-          <div class="problem-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>
-          </div>
-          <div class="problem-text">Decisões sem dados</div>
-        </div>
-      </div>
-      <p class="problems-cta reveal">"Se você identificou um ou mais desses problemas, existe uma estratégia para resolver."</p>
-    </div>
-  </section>
-
-  <!-- Solutions -->
-  <section class="section section-alt" id="servicos">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">Soluções</div>
-        <h2 class="section-title">Como posso ajudar sua empresa</h2>
-      </div>
-      <div class="solutions-grid">
-        <div class="solution-card reveal reveal-delay-1">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <div class="services-grid reveal">
+        <div class="service-card" data-num="01">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
           <h3>Planejamento Estratégico</h3>
-          <p>Definição de metas, posicionamento e rotas de crescimento para sua empresa.</p>
+          <p>Definição de metas, posicionamento e rotas de crescimento.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-1">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <div class="service-card" data-num="02">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
           <h3>Diagnóstico Empresarial</h3>
-          <p>Análise completa de pontos fortes, fraquezas e oportunidades ocultas no seu negócio.</p>
+          <p>Análise completa de pontos fortes e oportunidades ocultas.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-2">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <div class="service-card" data-num="03">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3>Estruturação de Processos</h3>
-          <p>Criação de fluxos eficientes que eliminam gargalos e aumentam produtividade.</p>
+          <p>Fluxos eficientes que eliminam gargalos e aumentam produtividade.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-2">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="service-card" data-num="04">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
           <h3>Gestão Financeira</h3>
           <p>Controle de custos, precificação inteligente e maximização de lucros.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-3">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="service-card" data-num="05">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3>Organização Comercial</h3>
-          <p>Estruturação da equipe comercial com processos de vendas previsíveis e escaláveis.</p>
+          <p>Equipe comercial com processos de vendas previsíveis e escaláveis.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-3">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="service-card" data-num="06">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Escala de Negócios</h3>
-          <p>Estratégias para crescer sem quebrar, mantendo qualidade e lucratividade.</p>
+          <p>Crescer sem quebrar, mantendo qualidade e lucratividade.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-4">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        <div class="service-card" data-num="07">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
           </div>
           <h3>Indicadores de Performance</h3>
-          <p>Dashboard de métricas estratégicas para decisões baseadas em dados reais.</p>
+          <p>Dashboard de métricas para decisões baseadas em dados reais.</p>
         </div>
-        <div class="solution-card reveal reveal-delay-4">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <div class="service-card" data-num="08">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
           <h3>Mentoria Executiva</h3>
-          <p>Acompanhamento personalizado para líderes que querem elevar seu nível de gestão.</p>
-        </div>
-        <div class="solution-card reveal">
-          <div class="solution-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-          </div>
-          <h3>Consultoria Personalizada</h3>
-          <p>Soluções sob medida para os desafios específicos da sua empresa e do seu mercado.</p>
+          <p>Acompanhamento personalizado para líderes que querem elevar sua gestão.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Method -->
-  <section class="section section-dark" id="metodo">
+  <section class="section" id="metodo">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">Processo</div>
-        <h2 class="section-title" style="color:#fff">Meu método de trabalho</h2>
+        <h2 class="section-title">Meu método de trabalho</h2>
+        <p class="section-sub">Do diagnóstico ao resultado, cada etapa é pensada para gerar impacto real.</p>
       </div>
-      <div class="method-timeline">
-        <div class="method-step reveal reveal-delay-1">
-          <div class="method-number"><span>1</span></div>
+      <div class="method-grid reveal">
+        <div class="method-step">
+          <div class="method-num">1</div>
           <h3>Diagnóstico</h3>
           <p>Análise completa da empresa, identificando pontos fortes, fraquezas e oportunidades.</p>
         </div>
-        <div class="method-step reveal reveal-delay-2">
-          <div class="method-number"><span>2</span></div>
+        <div class="method-step">
+          <div class="method-num">2</div>
           <h3>Estratégia</h3>
           <p>Construção do plano de crescimento com metas claras e ações específicas.</p>
         </div>
-        <div class="method-step reveal reveal-delay-3">
-          <div class="method-number"><span>3</span></div>
+        <div class="method-step">
+          <div class="method-num">3</div>
           <h3>Implementação</h3>
           <p>Execução das melhorias com acompanhamento próximo da equipe.</p>
         </div>
-        <div class="method-step reveal reveal-delay-4">
-          <div class="method-number"><span>4</span></div>
+        <div class="method-step">
+          <div class="method-num">4</div>
           <h3>Acompanhamento</h3>
           <p>Monitoramento dos indicadores e otimizações contínuas para sustentar resultados.</p>
         </div>
@@ -1276,74 +979,8 @@
     </div>
   </section>
 
-  <!-- Differentials -->
-  <section class="section" id="diferenciais">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">Diferenciais</div>
-        <h2 class="section-title">Por que empresas escolhem essa consultoria?</h2>
-      </div>
-      <div class="diff-grid">
-        <div class="diff-card reveal reveal-delay-1">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          </div>
-          <div>
-            <h3>Visão estratégica</h3>
-            <p>Enxargo além do óbvio para identificar oportunidades que outros não veem.</p>
-          </div>
-        </div>
-        <div class="diff-card reveal reveal-delay-1">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
-          </div>
-          <div>
-            <h3>Decisões baseadas em dados</h3>
-            <p>Cada recomendação é fundamentada em análise real, não em achismo.</p>
-          </div>
-        </div>
-        <div class="diff-card reveal reveal-delay-2">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div>
-            <h3>Atendimento personalizado</h3>
-            <p>Cada empresa é única. O tratamento também deve ser.</p>
-          </div>
-        </div>
-        <div class="diff-card reveal reveal-delay-2">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div>
-            <h3>Experiência prática</h3>
-            <p>15 anos lidando com empresas reais, não apenas teoria acadêmica.</p>
-          </div>
-        </div>
-        <div class="diff-card reveal reveal-delay-3">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          </div>
-          <div>
-            <h3>Foco em resultados</h3>
-            <p>Não medimos atividade, medimos impacto no faturamento e na eficiência.</p>
-          </div>
-        </div>
-        <div class="diff-card reveal reveal-delay-3">
-          <div class="diff-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <div>
-            <h3>Crescimento sustentável</h3>
-            <p>Construímos bases sólidas, não atalhos que geram problemas no futuro.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Testimonials -->
-  <section class="section section-alt" id="depoimentos">
+  <section class="section" id="depoimentos">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">Depoimentos</div>
@@ -1359,13 +996,13 @@
             </div>
           </div>
           <div class="testimonial-stars" aria-label="5 de 5 estrelas">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="testimonial-text">"Em 8 meses aumentamos o faturamento em 52%. O diagnóstico revelou gargalos que eu não conseguia enxergar sozinho. Mudou completamente a forma como gerencio a empresa."</p>
+          <p class="testimonial-text">"Em 8 meses aumentamos o faturamento em 52%. O diagnóstico revelou gargalos que eu não conseguia enxergar sozinho."</p>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-header">
@@ -1376,13 +1013,13 @@
             </div>
           </div>
           <div class="testimonial-stars" aria-label="5 de 5 estrelas">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="testimonial-text">"A consultoria trouxe clareza onde havia caos. Hoje temos processos definidos, equipe alinhada e resultados mensuráveis. Recomendo para qualquer empresário que queira profissionalizar."</p>
+          <p class="testimonial-text">"A consultoria trouxe clareza onde havia caos. Hoje temos processos definidos e resultados mensuráveis."</p>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-header">
@@ -1393,13 +1030,13 @@
             </div>
           </div>
           <div class="testimonial-stars" aria-label="5 de 5 estrelas">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="testimonial-text">"Saí de 200k para 1.2M de faturamento mensal em 18 meses. A estratégia foi certeira e a execução impecável. É o tipo de investimento que se paga em semanas."</p>
+          <p class="testimonial-text">"Saí de 200k para 1.2M de faturamento mensal em 18 meses. A estratégia foi certeira e a execução impecável."</p>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-header">
@@ -1410,13 +1047,13 @@
             </div>
           </div>
           <div class="testimonial-stars" aria-label="5 de 5 estrelas">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="testimonial-text">"Finalmente encontrei um consultor que entende de verdade o meu negócio. A abordagem é prática, direta e focada em resultados. Minha equipe nunca esteve tão alinhada."</p>
+          <p class="testimonial-text">"Finalmente encontrei um consultor que entende de verdade o meu negócio. Minha equipe nunca esteve tão alinhada."</p>
         </div>
       </div>
       <div class="testimonials-nav" id="testimonialsNav" aria-hidden="true">
@@ -1444,11 +1081,11 @@
           <div class="case-body">
             <div class="case-row">
               <div class="case-row-label">Desafio</div>
-              <div class="case-row-value">Crescimento estagnado há 3 anos, custos operacionais altos e perda de mercado para concorrentes.</div>
+              <div class="case-row-value">Crescimento estagnado há 3 anos, custos operacionais altos.</div>
             </div>
             <div class="case-row">
               <div class="case-row-label">Estratégia</div>
-              <div class="case-row-value">Reestruturação completa de processos, renegociação de contratos e implementação de indicadores de performance.</div>
+              <div class="case-row-value">Reestruturação de processos e implementação de indicadores.</div>
             </div>
             <div class="case-result">
               <div class="case-result-number">+63%</div>
@@ -1464,11 +1101,11 @@
           <div class="case-body">
             <div class="case-row">
               <div class="case-row-label">Desafio</div>
-              <div class="case-row-value">Equipe comercial desmotivada, processos de vendas inconsistentes e queda no ticket médio.</div>
+              <div class="case-row-value">Equipe comercial desmotivada e queda no ticket médio.</div>
             </div>
             <div class="case-row">
               <div class="case-row-label">Estratégia</div>
-              <div class="case-row-value">Capacitação da equipe, novo processo comercial com metas claras e programa de incentivos.</div>
+              <div class="case-row-value">Novo processo comercial com metas e programa de incentivos.</div>
             </div>
             <div class="case-result">
               <div class="case-result-number">+41%</div>
@@ -1484,11 +1121,11 @@
           <div class="case-body">
             <div class="case-row">
               <div class="case-row-label">Desafio</div>
-              <div class="case-row-value">Alto churn de clientes, processos internos caóticos e dificuldade em escalar a operação.</div>
+              <div class="case-row-value">Alto churn de clientes e dificuldade em escalar.</div>
             </div>
             <div class="case-row">
               <div class="case-row-label">Estratégia</div>
-              <div class="case-row-value">Implementação de CS, automação de processos e redefinição da proposta de valor.</div>
+              <div class="case-row-value">Implementação de CS, automação e redefinição de valor.</div>
             </div>
             <div class="case-result">
               <div class="case-result-number">-38%</div>
@@ -1500,67 +1137,10 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section section-alt" id="faq">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">Perguntas Frequentes</div>
-        <h2 class="section-title">Tire suas dúvidas</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Quanto tempo dura a consultoria?
-            <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>A consultoria tem duração mínima de 3 meses, mas o ideal é um acompanhamento de 6 a 12 meses para consolidar resultados. Cada projeto é único e a duração é definida após o diagnóstico inicial.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Quem pode contratar a consultoria?
-            <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Empresários, CEOs, diretores e empreendedores que desejam profissionalizar a gestão, crescer de forma segura e aumentar a lucratividade do negócio.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Atende empresas pequenas?
-            <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Sim. Atendo empresas de todos os portes — de pequenas empresas em fase de crescimento até grandes corporações que buscam otimização. A estratégia é adaptada à realidade de cada negócio.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Como funciona o diagnóstico?
-            <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>O diagnóstico é uma análise profunda da sua empresa, cobrindo financeiro, processos, equipe, mercado e resultados. É realizado em 2-3 semanas e entrega um mapa completo com oportunidades e plano de ação.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            O atendimento é presencial ou online?
-            <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-answer" role="region">
-            <p>Os dois. O atendimento é híbrido — reuniões presenciais quando necessário e acompanhamento contínuo via videochamadas. A flexibilidade permite atender empresas de qualquer localidade.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Final -->
   <section class="cta-final" id="contato">
     <div class="container cta-final-content reveal">
-      <h2>Sua empresa pode crescer muito mais.</h2>
+      <h2>Sua empresa pode crescer <em style="font-family:var(--font-display);color:var(--accent);">muito mais.</em></h2>
       <p>Agende uma reunião estratégica e descubra onde estão as maiores oportunidades de crescimento do seu negócio.</p>
       <a href="https://wa.me/5521989843115?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico." class="btn-primary" target="_blank" rel="noopener noreferrer">
         Agendar Diagnóstico Estratégico
@@ -1574,9 +1154,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo" style="color:#fff; font-size:1.5rem;">Pedro Pinheiro<span>.</span></a>
+          <a href="#" class="nav-logo" style="font-size:1.3rem;">Pedro Pinheiro<span>.</span></a>
           <p>Consultoria estratégica para empresas que buscam crescimento sustentável, gestão eficiente e resultados consistentes.</p>
-          <div class="footer-social" style="margin-top:1.25rem;">
+          <div class="footer-social">
             <a href="#" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
@@ -1590,24 +1170,14 @@
           <ul class="footer-links">
             <li><a href="tel:+5521989843115">(21) 98984-3115</a></li>
             <li><a href="https://wa.me/5521989843115" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="mailto:contato@pedro.com.br">contato@pedro.com.br</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="#autoridade">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#metodo">Método</a></li>
-            <li><a href="#cases">Cases</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="mailto:contato@pedropinheiro.com.br">contato@pedropinheiro.com.br</a></li>
           </ul>
         </div>
         <div>
           <h4>Localização</h4>
           <ul class="footer-links">
-            <li>Rio de Janeiro, RJ</li>
-            <li>Brasil</li>
+            <li><span>Rio de Janeiro, RJ</span></li>
+            <li><span>Brasil</span></li>
           </ul>
         </div>
       </div>
@@ -1630,7 +1200,7 @@
   </button>
 
   <script>
-    // ── Navigation scroll ──
+    // ── Nav scroll ──
     const nav = document.querySelector('.nav');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -1692,31 +1262,15 @@
 
     const updateDots = () => {
       const scrollLeft = track.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 32;
+      const cardWidth = cards[0].offsetWidth + 24;
       const index = Math.round(scrollLeft / cardWidth);
       dots.forEach((d, i) => d.classList.toggle('active', i === index));
     };
     track.addEventListener('scroll', updateDots);
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
-        const cardWidth = cards[0].offsetWidth + 32;
+        const cardWidth = cards[0].offsetWidth + 24;
         track.scrollTo({ left: cardWidth * parseInt(dot.dataset.index), behavior: 'smooth' });
-      });
-    });
-
-    // ── FAQ accordion ──
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
       });
     });
 
@@ -1728,15 +1282,6 @@
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-    // ── Parallax on hero glow ──
-    const heroGlow = document.querySelector('.hero-glow');
-    if (heroGlow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY * 0.3;
-        heroGlow.style.transform = `translateY(${y}px)`;
-      }, { passive: true });
-    }
   </script>
 </body>
 </html>
